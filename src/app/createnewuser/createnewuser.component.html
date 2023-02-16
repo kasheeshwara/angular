@@ -1,0 +1,49 @@
+<div style="margin-top: 100px;">
+<div>
+    <h1 ></h1>
+    <div class="logo">
+        <img src="../../assets/img/logo.png"  width="100px"/>
+        </div>
+       
+          <h1 class="dashboard_name">Add User</h1>
+          <hr />
+    <nav>
+        <div class="dashboard_buttons">
+          <ul>
+         
+          <li><a style="margin-right: 20px;"routerLink="/dashboard">Back</a></li>
+        </ul>
+        </div>
+      </nav>
+<form  #prform="ngForm" (ngSubmit)="saveproduct()" >
+    
+
+  
+    Enter Name:
+    <input type="text" name="name" [(ngModel)]="u.name" #name=ngModel minlength="5" required/>
+    <span class="invalid-feedback" *ngIf="name.touched && name.invalid">User name should be minimum of 5 characters </span><br/><br/>
+
+    Enter Password:
+    <input type="password" name="password" [(ngModel)]="u.password" #password=ngModel required/>
+    <span class="invalid-feedback"  *ngIf="password.touched && password.invalid">Password is mandatory </span><br/><br/>
+
+    Enter Email:
+    <input type="email" name="email"  [(ngModel)]="u.email" #email=ngModel min="1" required/>
+    <span class="invalid-feedback" *ngIf="email.touched && email.invalid"> Enter correct email </span><br/><br/>
+
+    Enter Mobile:
+    <input type="number" name="mobile" [(ngModel)]="u.mobile" #mobile=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="mobile.touched && mobile.invalid"> Enter mobile number correctly</span><br/><br/>
+    <br/><br/>
+
+    Enter Registered Date:
+    <input type="date" name="registeredDate" [(ngModel)]="u.registeredDate" #registeredDate=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="registeredDate.touched && registeredDate.invalid"></span><br/><br/>
+    <br/><br/>
+
+    <button type="submit" value="save user"  class="primary">Create New User</button>
+    <button type="reset" > Clear </button>
+    <br/><br/>
+</form>
+</div>
+</div>

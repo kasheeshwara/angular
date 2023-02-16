@@ -1,0 +1,47 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div style="margin-top: 100px;">
+    <nav>
+        <div class="dashboard_buttons">
+          <ul>
+          
+          <li><a style="margin-right: 20px;"routerLink="/product">Back</a></li>
+        </ul>
+        </div>
+      </nav>
+    
+    <h2>List of Products are</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th> Product ID </th>
+            <th> Product Name </th>
+            <th> Make</th>
+            <th> Model</th>
+            <th> Cost</th>
+            
+            <th> Date of Creation</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of ulist">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.make}}</td>
+            <td>{{u.model}}</td>
+            <td>{{u.cost}}</td>
+            
+            <td>{{u.createdDate|date}}</td>
+            <td><a routerLink="/updateproduct/{{u.id}}">Update</a></td>
+           
+            </tr>
+        </tbody>
+    </table>
+</div>

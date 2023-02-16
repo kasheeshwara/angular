@@ -1,0 +1,40 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div style="margin-top: 100px;">
+<nav>
+    <div class="dashboard_buttons">
+      <ul>
+      
+      <li><a style="margin-right: 20px;"routerLink="/service">Back</a></li>
+    </ul>
+    </div>
+  </nav>
+
+<hr />
+<input type="number" [(ngModel)]="id"/>
+<button (click)="getProductDetails()">Get User Details</button>
+<div style="margin-top: 100px;">
+   
+    <div *ngIf="!user">
+        <p>No user found with the specified ID.</p>
+      </div>
+    <div *ngIf="user">
+    <h1>User Details</h1>
+      <p><strong>Booking ID:</strong> {{user.id}}</p>
+      <p><strong>Product ID:</strong> {{user.productId}}</p>
+      <p><strong>User ID:</strong> {{user.userId}}</p>
+      <p><strong>Request Date:</strong> {{user.reqDate}}</p>
+      <p><strong>Problem:</strong> {{user.problem}}</p>
+      <p><strong>Description:</strong> {{user.description}}</p>
+      <p><strong>Status:</strong> {{user.status}}</p>
+    </div>
+    
+      
+ </div>
+</div>

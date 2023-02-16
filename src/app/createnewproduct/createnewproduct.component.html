@@ -1,0 +1,47 @@
+<div>
+    <h1 ></h1>
+    <div class="logo">
+        <img src="../../assets/img/logo.png"  width="100px"/>
+        </div>
+       
+          <h1 class="dashboard_name">Add Product</h1>
+          <hr />
+    <nav>
+        <div class="dashboard_buttons">
+          <ul>
+         
+          <li><a style="margin-right: 20px;"routerLink="/product">Back</a></li>
+        </ul>
+        </div>
+      </nav>
+<form  #prform="ngForm" (ngSubmit)="saveuser()" >
+    
+
+  
+    Enter Name:
+    <input type="text" name="name" [(ngModel)]="u.name" #name=ngModel minlength="5" required/>
+    <span class="invalid-feedback" *ngIf="name.touched && name.invalid">Product name should be minimum of 5 characters </span><br/><br/>
+
+    Enter Make:
+    <input type="password" name="password" [(ngModel)]="u.make" #make=ngModel required/>
+    <span class="invalid-feedback"  *ngIf="make.touched && make.invalid">Make is mandatory </span><br/><br/>
+
+    Enter Model:
+    <input type="email" name="email"  [(ngModel)]="u.model" #model=ngModel min="1" required/>
+    <span class="invalid-feedback" *ngIf="model.touched && model.invalid"> Enter correct Model </span><br/><br/>
+
+    Enter Cost:
+    <input type="number" name="mobile" [(ngModel)]="u.cost" #cost=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="cost.touched && cost.invalid"> Enter Cost correctly</span><br/><br/>
+    <br/><br/>
+
+    Enter Created Date:
+    <input type="date" name="registeredDate" [(ngModel)]="u.createdDate" #createdDate=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="createdDate.touched && createdDate.invalid">Select Created date</span><br/><br/>
+    <br/><br/>
+
+    <button type="submit" value="save product"  class="primary">Add New Product</button>
+    <button type="reset" > Clear </button>
+    <br/><br/>
+</form>
+</div>

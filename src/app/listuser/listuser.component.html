@@ -1,0 +1,44 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div style="margin-top: 100px;">
+    <nav>
+        <div class="dashboard_buttons">
+          <ul>
+          
+          <li><a style="margin-right: 20px;"routerLink="/user">Back</a></li>
+        </ul>
+        </div>
+      </nav>
+    
+    <h2>List of User are</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th> User ID </th>
+            <th> User Name </th>
+            <th> Email </th>
+            <th> Mobile </th>
+            <th> Date of Registration </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of ulist">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.mobile}}</td>
+            <td>{{u.registeredDate|date}}</td>
+            <td><a routerLink="/updateuser/{{u.id}}">Update</a></td>
+                
+           
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,20 +1,9 @@
-.login_buttons{
-    text-align: center;
-}
-
-.logo img{float:center;}
-
-a:hover, a:active {
-    background-color: green;
-    color: white;
-  }
-
-
-.dashboard_name{
+.user-center{
     text-align: left;
 }
+.logo img{float:right;}
 
-.dashboard_buttons{
+.user_buttons{
     align-items: right;
     text-align: right;
 }
@@ -40,8 +29,4 @@ nav ul {
   
   nav a:hover {
     background-color: #ccc;
-  }
-
-  .welcomemsg{
-    text-align: right;
   }

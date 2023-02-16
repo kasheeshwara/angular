@@ -1,8 +1,5 @@
-.login_buttons{
-    text-align: center;
-}
 
-.logo img{float:center;}
+.logo img{float:right;}
 
 a:hover, a:active {
     background-color: green;
@@ -40,8 +37,4 @@ nav ul {
   
   nav a:hover {
     background-color: #ccc;
-  }
-
-  .welcomemsg{
-    text-align: right;
   }

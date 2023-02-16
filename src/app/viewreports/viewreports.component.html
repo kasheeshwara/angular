@@ -1,0 +1,32 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<hr />
+<input type="number" [(ngModel)]="id"/>
+<button (click)="getReportDetails()">Get Report Details</button>
+<div style="margin-top: 100px;">
+   
+    <div *ngIf="!user">
+        <p>No user found with the specified ID.</p>
+      </div>
+    <div *ngIf="user">
+    <h1>Report Details</h1>
+      <p><strong>Report ID:</strong> {{user.id}}</p>
+      <p><strong>Service Request ID:</strong> {{user.serReqId}}</p>
+      <p><strong>Report Date:</strong> {{user.reportDate}}</p>
+      <p><strong>Service Type:</strong> {{user.serviceType}}</p>
+      <p><strong>Action Taken:</strong> {{user.actionTaken}}</p>
+      <p><strong>Diagnosis Details:</strong> {{user.diagnosisDetails}}</p>
+      <p><strong>Is Paid:</strong> {{user.isPaid}}</p>
+      <p><strong>Visit Fees:</strong> {{user.visitFees}}</p>
+      <p><strong>Repair Details:</strong> {{user.repairDetails}}</p>
+    </div>
+    
+      
+ </div>

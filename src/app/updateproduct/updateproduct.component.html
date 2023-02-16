@@ -1,0 +1,59 @@
+
+
+<div>
+    <h1 ></h1>
+    <div class="logo">
+        <img src="../../assets/img/logo.png"  width="100px"/>
+        </div>
+       
+          <h1 class="dashboard_name">Update Product</h1>
+          <hr />
+    <nav>
+        <div class="dashboard_buttons">
+          <ul>
+         
+          <li><a style="margin-right: 20px;"routerLink="/product">Back</a></li>
+        </ul>
+        </div>
+      </nav>
+      <div>
+        <div>
+  
+<form  #prform="ngForm" (click)="updateDetails(prform.value)"  class="was-validated">
+    
+
+  Enter Id:
+    <input type="text" name="id" [(ngModel)]="user.id" #id=ngModel required/>
+    <span class="invalid-feedback" *ngIf="id.touched && id.invalid">Id is required </span><br/><br/>
+  
+    Enter Name:
+    <input type="text" name="name" [(ngModel)]="user.name" #name=ngModel minlength="5" required/>
+    <span class="invalid-feedback" *ngIf="name.touched && name.invalid">User name should be minimum of 5 characters </span><br/><br/>
+
+    Enter Make:
+    <input type="text" name="password" [(ngModel)]="user.make" #make=ngModel required/>
+    <span class="invalid-feedback"  *ngIf="make.touched && make.invalid">Enter correct model </span><br/><br/>
+
+    Enter Model:
+    <input type="text" name="email"  [(ngModel)]="user.model" #model=ngModel min="1" required/>
+    <span class="invalid-feedback" *ngIf="model.touched && model.invalid"> Enter correct model </span><br/><br/>
+
+    Enter Cost:
+    <input type="number" name="mobile" [(ngModel)]="user.cost" #cost=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="cost.touched && cost.invalid"> Enter cost correctly</span><br/><br/>
+    <br/><br/>
+
+    Enter Created Date:
+    <input type="date" name="registeredDate" [(ngModel)]="user.createdDate" #createdDate=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="createdDate.touched && createdDate.invalid"></span><br/><br/>
+    <br/><br/>
+
+    <button type="submit" value="update product"  class="primary">Update Product</button><b>|</b>
+    <button type="reset" > Clear </button>
+    <br/><br/>
+</form>
+
+</div>
+</div>
+</div>
+

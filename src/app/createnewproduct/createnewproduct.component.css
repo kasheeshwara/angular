@@ -1,24 +1,3 @@
-.login_buttons{
-    text-align: center;
-}
-
-.logo img{float:center;}
-
-a:hover, a:active {
-    background-color: green;
-    color: white;
-  }
-
-
-.dashboard_name{
-    text-align: left;
-}
-
-.dashboard_buttons{
-    align-items: right;
-    text-align: right;
-}
-
 nav ul {
     align-content: flex-end;
     margin: 10;
@@ -41,7 +20,20 @@ nav ul {
   nav a:hover {
     background-color: #ccc;
   }
+  
+.logo img{float:right;}
 
-  .welcomemsg{
-    text-align: right;
+a:hover, a:active {
+    background-color: green;
+    color: white;
   }
+
+
+.dashboard_name{
+    text-align: left;
+}
+
+.dashboard_buttons{
+    align-items: right;
+    text-align: right;
+}
