@@ -9,7 +9,7 @@ import { ReportsService } from '../reports.service';
 })
 export class ViewreportsComponent {
   id: any;
-  user: Reports={id:null,serReqId:null,reportDate:new Date(),serviceType:"",actionTaken:"",diagnosisDetails:"",isPaid:"",visitFees:0,repairDetails:""};
+  user: Reports={id:0,serReqId:0,reportDate:new Date(),serviceType:"",actionTaken:"",diagnosisDetails:"",isPaid:"",visitFees:0,repairDetails:""};
 
 constructor(private reportsservice:ReportsService){}
   ngOnInit(): void {

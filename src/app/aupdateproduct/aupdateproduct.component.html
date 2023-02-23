@@ -1,0 +1,102 @@
+
+
+<div>
+    <h1 ></h1>
+    <div class="logo">
+        <img src="../../assets/img/logo.png"  width="100px"/>
+        </div>
+       
+          <!-- <h1 class="dashboard_name">Update Report</h1>
+          <hr /> --><br><br><br>
+    <nav>
+        <div class="dashboard_buttons">
+          <ul>
+         
+          <li><!--<a style="margin-right: 20px;"routerLink="/listbookings">Back</a>--></li>
+          <li><a style="margin-right: 20px;"routerLink="/admindashboard">Home</a></li>
+        </ul>
+        </div>
+      </nav>
+      <h2 class="dashboard_name">Update Report</h2>
+      <hr />
+      <div>
+        
+  
+<form  #prform="ngForm" (ngSubmit)="updateReportDetails(prform.value)"  class="was-validated">
+    
+
+  <!-- Enter Id:
+    <input type="text" name="id" [(ngModel)]="user.id" #id=ngModel disabled/>
+    <span class="invalid-feedback" *ngIf="id.touched && id.invalid">User name should be minimum of 5 characters </span><br/><br/>
+   -->
+    Service Request Id:<span style="color: red
+    ;">*</span><br><br>
+    <input type="number" name="serReqId" [(ngModel)]="user.serReqId" #serReqId=ngModel disabled />
+   <br/><br/>
+
+    Report Date:<span style="color: red
+    ;">*</span><br><br>
+    <input type="datetime" name="reportDate" [(ngModel)]="user.reportDate" #reportDate=ngModel required/>
+    <span class="invalid-feedback"  *ngIf="reportDate.touched && reportDate.invalid" style="color: red;" >*Required</span><br/><br/>
+
+    Service Type:<span style="color: red
+    ;">*</span><br><br>
+    <!-- <input type="text" name="serviceType"  [(ngModel)]="user.serviceType" #serviceType=ngModel min="1" required/> -->
+    <select  name="serviceType" [(ngModel)]="user.serviceType" #serviceType=ngModel style="width: 100px;" >
+      <option value="Support" selected>Support</option>
+      <option value="Repair" >Repair</option>
+      <option value="General" >General</option>
+    </select>
+    <span class="invalid-feedback" *ngIf="serviceType.touched && serviceType.invalid" style="color: red;"> *Required </span><br/><br/>
+
+    Action Taken?:<span style="color: red
+    ;">*</span><br><br>
+    <!-- <input type="text" name="actionTaken" [(ngModel)]="user.actionTaken" #actionTaken=ngModel required/> -->
+    
+     <select  name="actionTaken" [(ngModel)]="user.actionTaken" #actionTaken=ngModel style="width: 100px;" >
+      <option value="Yes" selected>Yes</option>
+      <option value="No" >No</option>
+      
+    </select>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="actionTaken.touched && actionTaken.invalid" style="color: red;">*Required</span><br/><br/>
+    
+
+    Diagnosis Details:<span style="color: red
+    ;">*</span><br><br>
+    <input type="text" name="diagnosisDetails" [(ngModel)]="user.diagnosisDetails" #diagnosisDetails=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="diagnosisDetails.touched && diagnosisDetails.invalid" style="color: red;">*Required</span><br/><br/>
+   
+
+    Is Paid?:<span style="color: red
+    ;">*</span><br><br>
+    <!-- <input type="text" name="isPaid" [(ngModel)]="user.isPaid" #isPaid=ngModel required/> -->
+    <select  name="isPaid" [(ngModel)]="user.isPaid" #isPaid=ngModel style="width: 100px;" >
+      <option value="Paid" selected>Paid</option>
+      <option value="Not Paid" >Not Paid</option>
+      
+    </select>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="isPaid.touched && isPaid.invalid" style="color: red;">*Required</span><br/><br/>
+    
+
+    Visit Fees:<span style="color: red
+    ;">*</span><br><br>
+    <input type="number" name="visitFees" [(ngModel)]="user.visitFees" #visitFees=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="visitFees.touched && visitFees.invalid" style="color: red;">*Required</span><br/><br/>
+    
+
+    Repair Deatils:<span style="color: red
+    ;">*</span><br><br>
+    <input type="text" name="repairDetails" [(ngModel)]="user.repairDetails" #repairDetails=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="repairDetails.touched && repairDetails.invalid" style="color: red;">*Required</span><br/><br/>
+    
+
+    <button type="submit" value="update"   class="primary">Update Report</button>
+    <button type="reset" style="margin-left: 20px;" > Clear </button>
+    <button style="margin-left: 20px;"routerLink="/listbookings" >Back</button>
+    <br/><br/>
+</form>
+
+</div>
+</div>
+
+

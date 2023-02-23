@@ -7,7 +7,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./createnewuser.component.css']
 })
 export class CreatenewuserComponent implements OnInit{
-  u:User={id:0,name:"",password:"",email:"",mobile:null,registeredDate:new Date()};
+  u:User={id:0,name:"",password:"",email:"",mobile:null,registeredDate:new Date(),token:"",role:""};
   x:any;
   
 message:string="";

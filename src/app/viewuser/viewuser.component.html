@@ -6,19 +6,23 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<div style="margin-top: 100px;">
+
+<div class="logo">
+  <img src="../../assets/img/logo.png" style="margin-top: 10px; margin-right: 20px;" width="100px"/>
+  </div><br><br><br>
+<div style="margin-top: 50px;">
 <nav>
   <div class="dashboard_buttons">
     <ul>
     
-    <li><a style="margin-right: 20px;"routerLink="/user">Back</a></li>
+    <li><!--<a style="margin-right: 20px;"routerLink="/listuser">Back</a>--></li>
   </ul>
   </div>
 </nav>
 <hr />
-<input type="number" [(ngModel)]="id"/>
-<button (click)="getUserDetails()">Get Product Details</button>
-<div style="margin-top: 100px;">
+<!--<input type="number" [(ngModel)]="id"/>
+<button (click)="getUserDetails()">Get Product Details</button> -->
+<!-- <div style="margin-top: 100px;">
    
     <div *ngIf="!user">
         <p>No user found with the specified ID.</p>
@@ -29,9 +33,19 @@
       <p><strong>Name:</strong> {{user.name}}</p>
       <p><strong>Email:</strong> {{user.email}}</p>
       <p><strong>Mobile:</strong> {{user.mobile}}</p>
-      <p><strong>Registered Date:</strong> {{user.registeredDate | date:'longDate'}}</p>
+      <p><strong>Registered Date:</strong> {{user.registeredDate | date:'Date'}}</p>
     </div>
     
       
- </div>
+ </div> -->
+ <div style="margin-left: 20px;">
+  <div> ID: {{user.id}}</div>
+  <div> Name: {{user.name}}</div>
+  <div> Email: {{user.email}}</div>
+  <div> Mobile: {{user.mobile}}</div>
+  
+  <div> Registered Date: {{user.registeredDate}}</div>
+</div>
+<br><br>
+<button style="margin-left: 20px; width: 80px;" routerLink="/listuser">Back</button>
 </div>

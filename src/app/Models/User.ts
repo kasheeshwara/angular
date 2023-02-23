@@ -5,4 +5,6 @@ export interface User{
     email:string
     mobile:number|null;
     registeredDate:Date;
+    token:string;
+    role:string;
 }

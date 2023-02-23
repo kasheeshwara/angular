@@ -10,8 +10,8 @@ import { UserComponent } from './user/user.component';
 import { ProductComponent } from './product/product.component';
 import { ServiceComponent } from './service/service.component';
 import { ProfileComponent } from './profile/profile.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ListuserComponent } from './listuser/listuser.component';
 import { ViewuserComponent } from './viewuser/viewuser.component';
@@ -26,6 +26,22 @@ import { CreatenewbookingComponent } from './createnewbooking/createnewbooking.c
 import { ListservicerequestsComponent } from './listservicerequests/listservicerequests.component';
 import { ViewreportsComponent } from './viewreports/viewreports.component';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { LoginComponent } from './login/login.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AdminserviceComponent } from './adminservice/adminservice.component';
+import { ViewservicerequestsComponent } from './viewservicerequests/viewservicerequests.component';
+import { UproductComponent } from './uproduct/uproduct.component';
+import { UlistproductComponent } from './ulistproduct/ulistproduct.component';
+import { MybookingsComponent } from './mybookings/mybookings.component';
+import { AupdateproductComponent } from './aupdateproduct/aupdateproduct.component';
+import { AupdatebookingComponent } from './aupdatebooking/aupdatebooking.component';
+import { ListreportsComponent } from './listreports/listreports.component';
+import { DeleteproductComponent } from './deleteproduct/deleteproduct.component';
+import { TokenInterceptorService } from './token.interceptor.service';
+import { NgToastModule } from 'ng-angular-popup';
+import { MyreportsComponent } from './myreports/myreports.component';
+import { AviewreportComponent } from './aviewreport/aviewreport.component';
+
 
 
 
@@ -65,6 +81,21 @@ const routes: Routes = [
     ListservicerequestsComponent,
     ViewreportsComponent,
     UpdateproductComponent,
+    LoginComponent,
+    AdmindashboardComponent,
+    AdminserviceComponent,
+    ViewservicerequestsComponent,
+    UproductComponent,
+    UlistproductComponent,
+    MybookingsComponent,
+    AupdateproductComponent,
+    AupdatebookingComponent,
+    ListreportsComponent,
+    DeleteproductComponent,
+    MyreportsComponent,
+    AviewreportComponent,
+    
+    
     
   ],
   imports: [
@@ -72,9 +103,17 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    NgToastModule
+
+   
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

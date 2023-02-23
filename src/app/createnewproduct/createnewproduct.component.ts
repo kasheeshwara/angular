@@ -26,6 +26,7 @@ saveuser():void
     
   }
  ) 
+ alert("Product Added Successfully");
   console.log(this.u);
   
 }

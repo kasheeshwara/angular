@@ -1,0 +1,30 @@
+<div class="logo">
+    <img src="../../assets/img/logo.png"  width="100px"/>
+    </div>
+    <br>
+   
+    <div style="margin-top: 50px;">
+        <nav>
+            <div class="dashboard_buttons">
+              <ul>
+              
+              <li><!--<a style="margin-right: 20px;"routerLink="/adminservice">Back</a>--></li>
+              <li><a style="margin-right: 20px;"routerLink="/admindashboard">Home</a></li>
+            </ul>
+            </div>
+          </nav>
+
+<h2>My Reports</h2>
+   
+<p><strong>Report ID:</strong> {{u.id}}</p>
+<p><strong>Service Request ID:</strong> {{u.serReqId}}</p>
+<p><strong>Service Type:</strong> {{u.serviceType}}</p>
+<p><strong>Action Taken:</strong> {{u.actionTaken}}</p>
+<p><strong>Diagnosis Details:</strong> {{u.diagnosisDetails}}</p>
+<p><strong>Is Paid:</strong> {{u.isPaid}}</p>
+<p><strong>Visit Fees:</strong> {{u.visitFees}}</p>
+<p><strong>Reapair Details:</strong> {{u.repairDetails}}</p>
+<p><strong>Report Date:</strong> {{u.reportDate}}</p>
+
+<br><br>
+<button style="margin-left: 20px;width: 80px;"routerLink="/listreports">Back</button>

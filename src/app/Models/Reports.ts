@@ -1,6 +1,6 @@
 export interface Reports{
-    id:number| null;
-    serReqId:number|null;
+    id:number;
+    serReqId:number;
     reportDate:Date;
     serviceType:string;
     actionTaken:string;

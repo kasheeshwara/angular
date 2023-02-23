@@ -1,24 +1,55 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="logo">
+  <img src="../../assets/img/logo.png"  width="100px"/>
+  </div>
+  <br>
+<div style="margin-top: 50px;">
+<nav>
+  <div class="dashboard_buttons">
+    <ul>
+    
+    <li><!--<a style="margin-right: 20px;"routerLink="/dashboard">Back</a>--></li>
+    <li><a style="margin-right: 20px;"routerLink="/dashboard">Home</a></li>
+  </ul>
+  </div>
+</nav>
 <hr />
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <div class="logo">
-    <img src="../../assets/img/logo.png"  width="100px"/>
-    </div>
+<!--<input type="number" [(ngModel)]="id"/>
+<button (click)="getUserDetails()">Get Product Details</button> -->
+<!-- <div style="margin-top: 100px;">
    
-      <h1 class="dashboard_name">Service Centre</h1>
-      <hr />
-      <br><br>
-      <nav>
-      <div class="dashboard_buttons">
-        <ul>
-     
-        <li><a style="margin-right: 20px;"routerLink="/dashboard">Back</a></li>
-      </ul>
+    <div *ngIf="!user">
+        <p>No user found with the specified ID.</p>
       </div>
-    </nav>
+    <div *ngIf="user">
+    <h1>User Details</h1>
+      <p><strong>ID:</strong> {{user.id}}</p>
+      <p><strong>Name:</strong> {{user.name}}</p>
+      <p><strong>Email:</strong> {{user.email}}</p>
+      <p><strong>Mobile:</strong> {{user.mobile}}</p>
+      <p><strong>Registered Date:</strong> {{user.registeredDate | date:'Date'}}</p>
+    </div>
+    
+      
+ </div> -->
+ <h2 style="margin-left: 20px;"> Your Details</h2><br>
+ <div style="margin-left: 20px;">
+    ID: {{na.id}}<br>
+   Name: {{na.name}}<br>
+  Email: {{na.email}}<br>
+  Mobile: {{na.mobile}}<br>
   
-</html>
-    <router-outlet></router-outlet>
+  Registered Date: {{na.registeredDate}}<br><br><br>
+
+  <!-- <button type="submit" routerLink="/updateuser/{{na.id}}"> Update</button> -->
+
+  <button style="margin-right: 20px;margin-left: 20px;"routerLink="/dashboard">Back</button>
+</div>
+</div>

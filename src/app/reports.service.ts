@@ -9,9 +9,10 @@ import { Reports } from './Models/Reports';
 export class ReportsService {
 
   ulist:any;
-  u:Reports={id:null,serReqId:null,reportDate:new Date(),serviceType:"",actionTaken:"",diagnosisDetails:"",isPaid:"",visitFees:0,repairDetails:""};
-  url:string="https://localhost:44306/api/ServiceRequestReports";
-  url1:string="https://localhost:44306/api/ServiceRequestReports/id"
+  u:Reports={id:0,serReqId:0,reportDate:new Date(),serviceType:"",actionTaken:"",diagnosisDetails:"",isPaid:"",visitFees:0,repairDetails:""};
+  url:string="https://localhost:44347/api/ServiceRequestReports";
+  url1:string="https://localhost:44347/api/ServiceRequestReports/id"
+  reportUrl:string="https://localhost:44347/api/Reports"
   
   constructor(private httpclient:HttpClient) { }
 
@@ -25,10 +26,28 @@ export class ReportsService {
     
     return this.httpclient.get<Reports>(this.url+"/"+id);
   }
-  /*addreport(u:Reports):Observable<Reports>
+  getuserreport(id:number):Observable<Reports>
+  {
+    
+    return this.httpclient.get<Reports>(this.reportUrl+"/"+id);
+  }
+  addreport(u:Reports):Observable<Reports>
   {
     u.id=0;
     return this.httpclient.post<Reports>(this.url,u,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'
+        
+      })
+    });
+  }
+
+  addreports(report:Reports):Observable<Reports>
+  {
+    
+    return this.httpclient.post<Reports>(this.url,report,{
       headers:new HttpHeaders({
         'Content-Type':'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin':'*',
@@ -62,7 +81,7 @@ export class ReportsService {
       
     });
     this.getreports();
-  } */
+  } 
 
   private manageError(err_response:HttpErrorResponse)
   {

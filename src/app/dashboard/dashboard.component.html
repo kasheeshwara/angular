@@ -7,20 +7,23 @@
   <div class="logo">
     <img src="../../assets/img/logo.png"  width="100px"/>
     </div>
+    <br>
    
-      <h1 class="dashboard_name">Dashboard</h1>
-      <hr />
+      <!-- <h1 class="dashboard_name">Dashboard</h1>
+      <hr /> -->
       <br><br>
+      <h1 class="dashboard_name">Dashboard</h1>
       <nav>
       <div class="dashboard_buttons">
         <ul>
-        <li><a style="margin-right: 20px;" routerLink="/user" >User</a> </li>
-        <li><a style="margin-right: 20px;"routerLink="/product">Product</a></li>
-       <li> <a style="margin-right: 20px;"routerLink="/service">Service</a></li>
-        <li><a style="margin-right: 20px;"routerLink="/profile">Profile</a></li>
+        
+        <li><a style="margin-right: 20px;" routerLink="/ulistproduct">Product</a></li>
+       <li> <a style="margin-right: 20px;" routerLink="/service">Service</a></li>
+       <li><a style="margin-right: 20px;" routerLink="/profile" >Profile</a> </li>
+       <li><a style="margin-right: 20px;" (click)="logOut()" >Logout </a> </li>
       </ul>
       </div>
     </nav>
   
 </html>
-    <router-outlet></router-outlet>
+   

@@ -6,39 +6,45 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<div style="margin-top: 100px;">
+<div>
+    <h1 ></h1>
+    <div class="logo">
+        <img src="../../assets/img/logo.png"  width="100px"/>
+        </div><br><br><br>
+
+<div style="margin-top: 50px;">
     <nav>
         <div class="dashboard_buttons">
           <ul>
           
-          <li><a style="margin-right: 20px;"routerLink="/user">Back</a></li>
+          <li><!--<a style="margin-right: 20px;"routerLink="/admindashboard">Back</a>--></li>
+          <li><a style="margin-right: 20px;"routerLink="/admindashboard">Home</a></li>
         </ul>
         </div>
       </nav>
     
-    <h2>List of User are</h2>
+    <h2>Users</h2>
     <table class="table">
         <thead>
         <tr>
             <th> User ID </th>
             <th> User Name </th>
             <th> Email </th>
-            <th> Mobile </th>
-            <th> Date of Registration </th>
+            
            
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let u of ulist">
             <td>{{u.id}}</td>
-            <td>{{u.name}}</td>
+            <td >{{u.name}}</td>
             <td>{{u.email}}</td>
-            <td>{{u.mobile}}</td>
-            <td>{{u.registeredDate|date}}</td>
-            <td><a routerLink="/updateuser/{{u.id}}">Update</a></td>
+            
+            <td><a routerLink="/viewuser/{{u.id}}">View</a></td>
                 
            
             </tr>
         </tbody>
     </table>
+    <button style="margin-left: 20px;width: 80px;"routerLink="/admindashboard">Back</button>
 </div>

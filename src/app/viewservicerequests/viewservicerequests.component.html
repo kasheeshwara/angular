@@ -1,0 +1,29 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div style="margin-top: 100px;">
+<nav>
+  <div class="dashboard_buttons">
+    <ul>
+    
+    <li><a style="margin-right: 20px;"routerLink="/listservicerequests">Back</a></li>
+  </ul>
+  </div>
+</nav>
+<hr />
+<h1>Request Details</h1>
+ <div><strong>Report ID:</strong> {{report.id}}</div>
+ <div><strong>Request ID:</strong> {{report.serReqId}}</div>
+ <div><strong>Report Date:</strong> {{report.reportDate}}</div>
+ <div><strong>Service Type:</strong> {{report.serviceType}}</div>
+ <div><strong>Action Taken:</strong> {{report.actionTaken}}</div>
+ <div><strong>Diagnosis Details:</strong> {{report.diagnosisDetails}}</div>
+ <div><strong>Is Paid:</strong> {{report.isPaid}}</div>
+ <div><strong>Visit Fees:</strong> {{report.visitFees}}</div>
+ <div><strong>Repair Details:</strong> {{report.repairDetails}} </div>
+</div>

@@ -8,8 +8,9 @@ import { User } from './Models/User';
 export class UserService {
   
   ulist:any;
-  u:User={id:0,name:"",password:"",email:"",mobile:null,registeredDate:new Date()};
-  url:string="https://localhost:44306/api/User";
+  u:User={id:0,name:"",password:"",email:"",mobile:null,registeredDate:new Date(),token:"",role:""};
+  url:string="https://localhost:44347/api/Users";
+  urlstr:string="https://localhost:44347/api/UserByName";
   headers:any={ 'Content-Type':'application/json;charset=UTF-8',
   'Access-Control-Allow-Origin':'*',
   'Access-Control-Allow-Method':'*'
@@ -29,6 +30,12 @@ export class UserService {
     
     return this.httpclient.get<User>(this.url+"/"+id);
   }
+
+  getuserstr(name:string):Observable<User>
+  {
+    
+    return this.httpclient.get<User>(this.urlstr+"/"+name);
+  }
   adduser(u:User):Observable<User>
   {
     u.id=0;
@@ -43,6 +50,8 @@ export class UserService {
       headers:new HttpHeaders(this.headers)
     });
   }
+
+  
     
   Deleteuser(id:number):Observable<User>
   {
@@ -63,6 +72,10 @@ export class UserService {
     return throwError('There is a little problem while processing your request.Sorry for the inconvenience');
     
   }
-  
+  findemp(id:string):any{
+    this.id=Number(id);
+    this.u=this.ulist.find((x: { id: any; })=>x.id==this.id);
+    return this.u;
+  }
 
 }

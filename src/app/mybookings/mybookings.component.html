@@ -1,0 +1,55 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div style="margin-top: 50px;">
+    <div class="logo">
+        <img src="../../assets/img/logo.png"  width="100px"/>
+        </div><br><br><br>
+    <nav>
+        <div class="dashboard_buttons">
+          <ul>
+          
+          <li><!--<a style="margin-right: 20px;"routerLink="/service">Back</a>--></li>
+          <li><a style="margin-right: 20px;"routerLink="/dashboard">Home</a></li>
+        </ul>
+        </div>
+      </nav>
+    
+    <h2>My Bookings</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th> Booking ID </th>
+            <th> Product ID </th>
+           
+            
+            <th> Problem</th>
+            <th> Description </th>
+            
+            <th> Status</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of na">
+            <td>{{u.id}}</td>
+            <td>{{u.productId}}</td>
+            
+            <td>{{u.problem}}</td>
+            <td>{{u.description}}</td>
+           
+            <td>{{u.status}}</td>
+            
+            <td><a routerLink="/myreports/{{u.id}}">Report</a></td>
+           
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button style="margin-right: 20px;margin-left: 20px;"routerLink="/service">Back</button>
+</div>

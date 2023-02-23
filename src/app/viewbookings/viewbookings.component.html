@@ -11,14 +11,14 @@
     <div class="dashboard_buttons">
       <ul>
       
-      <li><a style="margin-right: 20px;"routerLink="/service">Back</a></li>
+      <li><a style="margin-right: 20px;"routerLink="/listbookings">Back</a></li>
     </ul>
     </div>
   </nav>
 
 <hr />
-<input type="number" [(ngModel)]="id"/>
-<button (click)="getProductDetails()">Get User Details</button>
+<!-- <input type="number" [(ngModel)]="id"/>
+<button (click)="getProductDetails()">Get Booking Details</button>
 <div style="margin-top: 100px;">
    
     <div *ngIf="!user">
@@ -37,4 +37,13 @@
     
       
  </div>
-</div>
+</div> -->
+
+<h2>Booking Details</h2>
+<p><strong>Booking ID:</strong> {{user.id}}</p>
+<p><strong>Product ID:</strong> {{user.productId}}</p>
+<p><strong>User ID:</strong> {{user.userId}}</p>
+<p><strong>Request Date:</strong> {{user.reqDate}}</p>
+<p><strong>Problem:</strong> {{user.problem}}</p>
+<p><strong>Description:</strong> {{user.description}}</p>
+<p><strong>Status:</strong> {{user.status}}</p>

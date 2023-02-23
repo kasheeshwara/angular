@@ -1,4 +1,5 @@
 
+  
 
 <div>
     <h1 ></h1>
@@ -12,44 +13,42 @@
         <div class="dashboard_buttons">
           <ul>
          
-          <li><a style="margin-right: 20px;"routerLink="/product">Back</a></li>
+          <li><!--<a style="margin-right: 20px;"routerLink="/listproduct">Back</a>--></li>
         </ul>
         </div>
       </nav>
       <div>
         <div>
   
-<form  #prform="ngForm" (click)="updateDetails(prform.value)"  class="was-validated">
+<form  #prform="ngForm"   (ngSubmit)="updateDetails(prform.value)" class="was-validated">
     
 
-  Enter Id:
-    <input type="text" name="id" [(ngModel)]="user.id" #id=ngModel required/>
-    <span class="invalid-feedback" *ngIf="id.touched && id.invalid">Id is required </span><br/><br/>
+  Enter Id:<span style="color: red;">*</span><br><br>
+    <input type="number" name="id" [(ngModel)]="product.id" #id=ngModel disabled=""/>
+    <span class="invalid-feedback" *ngIf="id.touched && id.invalid"></span><br/><br/>
   
-    Enter Name:
-    <input type="text" name="name" [(ngModel)]="user.name" #name=ngModel minlength="5" required/>
-    <span class="invalid-feedback" *ngIf="name.touched && name.invalid">User name should be minimum of 5 characters </span><br/><br/>
+    Enter Name:<span style="color: red;">*</span><br><br>
+    <input type="" name="name" [(ngModel)]="product.name" #name=ngModel minlength="5" disabled/>
+    <span class="invalid-feedback" *ngIf="name.touched && name.invalid"> </span><br/><br/>
 
-    Enter Make:
-    <input type="text" name="password" [(ngModel)]="user.make" #make=ngModel required/>
-    <span class="invalid-feedback"  *ngIf="make.touched && make.invalid">Enter correct model </span><br/><br/>
+    Enter Make:<span style="color: red;">*</span><br><br>
+    <input type="" name="make" [(ngModel)]="product.make" #make=ngModel disabled/>
+    <span class="invalid-feedback"  *ngIf="make.touched && make.invalid"> </span><br/><br/>
 
-    Enter Model:
-    <input type="text" name="email"  [(ngModel)]="user.model" #model=ngModel min="1" required/>
-    <span class="invalid-feedback" *ngIf="model.touched && model.invalid"> Enter correct model </span><br/><br/>
+    Enter Model:<span style="color: red;">*</span><br><br>
+    <input type="" name="model"  [(ngModel)]="product.model" #model=ngModel min="1" required/>
+    <span class="invalid-feedback" *ngIf="model.touched && model.invalid" style="color: red;"> *Required </span><br/><br/>
 
-    Enter Cost:
-    <input type="number" name="mobile" [(ngModel)]="user.cost" #cost=ngModel required/>
-    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="cost.touched && cost.invalid"> Enter cost correctly</span><br/><br/>
+    Enter Cost:<span style="color: red;">*</span><br><br>
+    <input type="number" name="cost" [(ngModel)]="product.cost" #cost=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="cost.touched && cost.invalid" style="color: red;" > *Required</span><br/><br/>
     <br/><br/>
 
-    Enter Created Date:
-    <input type="date" name="registeredDate" [(ngModel)]="user.createdDate" #createdDate=ngModel required/>
-    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="createdDate.touched && createdDate.invalid"></span><br/><br/>
-    <br/><br/>
+    
 
-    <button type="submit" value="update product"  class="primary">Update Product</button><b>|</b>
+    <button type="submit" value="update product"  class="primary">Update Product</button>
     <button type="reset" > Clear </button>
+    <button style="margin-right: 20px;"routerLink="/listproduct">Back</button>
     <br/><br/>
 </form>
 

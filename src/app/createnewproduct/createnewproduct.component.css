@@ -37,3 +37,6 @@ a:hover, a:active {
     align-items: right;
     text-align: right;
 }
+button{
+  margin-right: 20px;
+}

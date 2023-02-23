@@ -6,32 +6,32 @@
         <img src="../../assets/img/logo.png"  width="100px"/>
         </div>
        
-          <h1 class="dashboard_name">Add User</h1>
+          <h1 class="dashboard_name">Update User Details</h1>
           <hr />
     <nav>
         <div class="dashboard_buttons">
           <ul>
          
-          <li><a style="margin-right: 20px;"routerLink="/user">Back</a></li>
+          <li><a style="margin-right: 20px;"routerLink="/profile">Back</a></li>
         </ul>
         </div>
       </nav>
       <div>
-        <div>
+        
   
-<form  #prform="ngForm" (click)="updateUserDetails(prform.value)"  class="was-validated">
+<form  #prform="ngForm" (ngSubmit)="updateUserDetails(prform.value)"  class="was-validated">
     
 
   Enter Id:
-    <input type="text" name="id" [(ngModel)]="user.id" #id=ngModel required/>
+    <input type="text" name="id" [(ngModel)]="user.id" #id=ngModel disabled/>
     <span class="invalid-feedback" *ngIf="id.touched && id.invalid">User name should be minimum of 5 characters </span><br/><br/>
   
     Enter Name:
-    <input type="text" name="name" [(ngModel)]="user.name" #name=ngModel minlength="5" required/>
+    <input type="text" name="name" [(ngModel)]="user.name" #name=ngModel minlength="5" disabled/>
     <span class="invalid-feedback" *ngIf="name.touched && name.invalid">User name should be minimum of 5 characters </span><br/><br/>
 
     Enter Password:
-    <input type="password" name="password" [(ngModel)]="user.password" #password=ngModel required/>
+    <input type="password" name="password" [(ngModel)]="user.password" #password=ngModel disabled/>
     <span class="invalid-feedback"  *ngIf="password.touched && password.invalid">Password is mandatory </span><br/><br/>
 
     Enter Email:
@@ -44,16 +44,20 @@
     <br/><br/>
 
     Enter Registered Date:
-    <input type="date" name="registeredDate" [(ngModel)]="user.registeredDate" #registeredDate=ngModel required/>
+    <input type="date" name="registeredDate" [(ngModel)]="user.registeredDate" #registeredDate=ngModel disabled/>
     <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="registeredDate.touched && registeredDate.invalid"></span><br/><br/>
     <br/><br/>
 
-    <button type="submit" value="update"  class="primary">Update User</button>
+    Token:
+    <input type="text" name="token" [(ngModel)]="user.token" #token=ngModel minlength="5" disabled/>
+    <span class="invalid-feedback" *ngIf="token.touched && token.invalid">User name should be minimum of 5 characters </span><br/><br/>
+
+    <button type="submit" value="updateuser"  class="primary" ((submit))="updateUserDetails(prform.value)">Update User</button>
     <button type="reset" > Clear </button>
     <br/><br/>
 </form>
 
 </div>
 </div>
-</div>
+
 

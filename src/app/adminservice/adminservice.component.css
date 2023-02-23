@@ -1,0 +1,41 @@
+
+
+.logo img{float:right;}
+
+a:hover, a:active {
+    background-color: green;
+    color: white;
+  }
+
+
+.dashboard_name{
+    text-align: left;
+}
+
+.dashboard_buttons{
+    align-items: right;
+    text-align: right;
+}
+
+nav ul {
+    align-content: flex-end;
+    margin: 10;
+    padding: 0;
+    background-color: #ebeae0;
+    text-align: right; /* Centers the list items horizontally */
+  }
+  
+  nav li {
+    display: inline-block; /* Displays the list items side-by-side */
+  }
+  
+  nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  nav a:hover {
+    background-color: #ccc;
+  }

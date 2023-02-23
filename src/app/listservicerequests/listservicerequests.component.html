@@ -11,23 +11,21 @@
         <div class="dashboard_buttons">
           <ul>
           
-          <li><a style="margin-right: 20px;"routerLink="/dashboard">Back</a></li>
+          <li><a style="margin-right: 20px;"routerLink="/adminservice">Back</a></li>
         </ul>
         </div>
       </nav>
     
-    <h2>List of Requests are</h2>
+     <h2>List of Requests are</h2>
     <table class="table">
         <thead>
         <tr>
             <th> Report ID </th>
             <th> Request ID </th>
-            <th> Report Date</th>
+           
             <th> Service Type </th>
             <th> Action Taken </th>
-            <th> Diagnosis Details </th>
-            <th> Is Paid</th>
-            <th> Visit Fees</th>
+           
             <th> Repair Details </th>
            
         </tr>
@@ -36,16 +34,20 @@
         <tr *ngFor="let u of ulist">
             <td>{{u.id}}</td>
             <td>{{u.serReqId}}</td>
-            <td>{{u.reportDate}}</td>
+            
             <td>{{u.serviceType}}</td>
             <td>{{u.actionTaken}}</td>
-            <td>{{u.diagnosisDetails}}</td>
-            <td>{{u.isPaid}}</td>
-            <td>{{u.visitFees}}</td>
+            
+           
+            
             <td>{{u.repairDetails}}</td>
+            <td><a routerLink="/viewservicerequests/{{u.id}}">View</a></td>
             
            
             </tr>
         </tbody>
     </table>
 </div>
+
+          
+            

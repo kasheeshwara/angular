@@ -1,7 +1,7 @@
 export interface Bookings{
-    id:number| null;
-    productId:number|null;
-    userId:number|null;
+    id:number;
+    productId:number;
+    userId:number;
     reqDate:Date;
     problem:string;
     description:string;

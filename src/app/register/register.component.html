@@ -1,68 +1,115 @@
-<!--<header>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</header>
+<body>
+    <header>
+        
+            <br>
+              <h2 class="dashboard_name" style="font-size:xx-large;">Service Booking Portal</h2>
+              
+              <br><br>
+              <nav>
+              <div class="dashboard_buttons">
+                <ul>
+               <li></li>
+                
+              </ul>
+              </div>
+            </nav>
+        
+    </header>
+    <main>
+        <!-- <h1>Login</h1> -->
+        <form id="login_form" class="form_class" action="login/login-access.php" method="post" [formGroup]= "signUpForm">
+            <h1>Register</h1>
+            <div class="form_div">
+                <label>User name:</label>
+                <input class="field_class" name="username" formControlName="username" type="text"  autofocus>
+                <label>Password:</label>
+                <input id="pass" class="field_class" formControlName="password" name="password" type="password" >
+                <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                <label>Email:</label>
+                <input class="field_class" name="email" formControlName="email" type="email"  autofocus>
+                <label>Mobile:</label>
+                <input id="pass" class="field_class" formControlName="mobile" name="mobile" type="number" >
+                <button class="submit_class" type="submit" form="login_form" (click)="onSignUp()">Register</button>
+            </div>
+            <div class="info_div">
+                <p>Already have an account?<a id="forget" routerLink="/login">Login</a></p>
+            </div>
+        </form>
+    </main>
+   
+</body>
 
 
-<hr />
 
-<form (ngSubmit)="onSubmit()">
+
+
+
+<!-- 
+   <div class="logo">
+    <img src="../../assets/img/logo.png"  width="100px"/>
+    </div><br>
+    <h2 class="dashboard_name" style="color: blueviolet;">Service Booking Portal</h2>
+<div class="" style="margin-left: 300px; margin-right: 300px; margin-bottom: 300px;">
   <div class="container">
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" [(ngModel)] = "user.name"  id="name" required>
+      <div class="row">
+          <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+              <div class="panel border bg-white" style="background-color: antiquewhite;"><br>
+              <div class="panel-heading">
+                  <h3 class="pt-3 font-weight-bold">Signup</h3>
+              </div>
+              <div class="panel-body p-3">
+                  <form [formGroup]= "signUpForm" style="margin-bottom: 30px;">
+                    <label>User Name: <span style="color: red
+                    ;">*</span></label><br/><br>
+                      <div class="form-group pt-3">
+                          <div class="input-field">
+                              <span class="fa fa-user p-2"></span>
+                              <input formControlName="username" type="text" placeholder="Username">
+                          </div>
+                      </div>
+                      <small *ngIf="signUpForm.controls['username'].dirty && signUpForm.hasError('required','username')" style="color: red
+                      ;" class="text-danger">*Username is required</small><br>
+                      <label>Password:<span style="color: red
+                        ;">*</span> </label><br/><br>
+                      <div class="form-group pt-3">
+                          <div class="input-field">
+                              <span class="fa fa-lock p-2"></span>
+                              <input formControlName="password" [type]="type" placeholder="Password">
+                              <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                          </div>
+                      </div>
+                      <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" style="color: red
+                      ;" class="text-danger">*Password is required</small><br>
+                      
+                      <label>Email:<span style="color: red
+                        ;">*</span> </label><br/><br>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw"[(ngModel)] = "user.password"  id="password" required>
-
-    <label for="mail"><b>Email</b></label>
-    <input type="text" placeholder="Enter mail" name="psw"[(ngModel)] = "user.mailId"  id="mailId" required>
-
-    <label for="mobno"><b>Mobile Number</b></label>
-    <input type="text" placeholder="Enter Mobile Number" name="mobno" [(ngModel)] = "user.mobile" id="mobile" required><br>
-    
-    <label for="regDate"><b>Registration Date</b></label>
-    <input type="date" placeholder="Enter Date" [(ngModel)] = "user.regDate"  name="regDate" id="regDate" required>  
-
-    <hr>
-    <button type="submit" class="registerbtn">Register</button>
+                      <div class="form-group pt-3">
+                          <div class="input-field">
+                              <span class="fa fa-user p-2"></span>
+                              <input formControlName="email" type="text"  placeholder="Email">
+                          </div>
+                      </div> 
+                      <small *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')" style="color: red
+                      ;" class="text-danger">*Email is required</small><br>
+                      
+                      <label>Mobile:<span style="color: red
+                        ;">*</span> </label><br/><br>
+                      <div class="form-group pt-3">
+                          <div class="input-field">
+                              <span class="fa fa-user p-2"></span>
+                              <input formControlName="mobile" type="number"  placeholder="Mobile">
+                          </div>
+                      </div>
+                      <small *ngIf="signUpForm.controls['mobile'].dirty && signUpForm.hasError('required','mobile')" style="color: red
+                      ;" class="text-danger">*Mobile is required</small>
+                      <br>
+                      <button (click)="onSignUp()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Signup</button>
+                      <div class="text-center pt-4 text-muted">Already have an account?<a id="forget" routerLink="/login">Login</a></div>
+                  </form>
+              </div>
+              </div>
+          </div>
+      </div>
   </div>
-  
-  <div class="container signin">
-    <p>Already have an account? <a routerLink="/login">Login</a>.</p>
-  </div>
-</form>
-<header>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</header>
-
-
-<hr />
-
-<form (ngSubmit)="onSubmit()">
-  <div class="container">
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" [(ngModel)] = "user.name"  id="name" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw"[(ngModel)] = "user.password"  id="password" required>
-
-    <label for="mail"><b>Email</b></label>
-    <input type="text" placeholder="Enter mail" name="psw"[(ngModel)] = "user.mailId"  id="mailId" required>
-
-    <label for="mobno"><b>Mobile Number</b></label>
-    <input type="text" placeholder="Enter Mobile Number" name="mobno" [(ngModel)] = "user.mobile" id="mobile" required><br>
-    
-    <label for="regDate"><b>Registration Date</b></label>
-    <input type="date" placeholder="Enter Date" [(ngModel)] = "user.regDate"  name="regDate" id="regDate" required>  
-
-    <hr>
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
-  
-  <div class="container signin">
-    <p>Already have an account? <a routerLink="/login">Login</a>.</p>
-  </div>
-</form> -->
+</div> -->

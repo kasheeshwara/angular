@@ -1,6 +1,6 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders ,HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { Bookings } from './Models/Bookings';
 
 @Injectable({
@@ -9,9 +9,10 @@ import { Bookings } from './Models/Bookings';
 export class BookingsService {
 
   ulist:any;
-  u:Bookings={id:null,productId:null,userId:null,reqDate:new Date(),problem:"",description:"",status:""};
-  url:string="https://localhost:44306/api/ServiceRequests";
-
+  u:Bookings={id:0,productId:0,userId:0,reqDate:new Date(),problem:"",description:"",status:""};
+  url:string="https://localhost:44347/api/ServiceRequests";
+  ur:string="https://localhost:44347/api/ServiceByName";
+  urll:string="https://localhost:44347/api/ServiceRequests/";
   
   constructor(private httpclient:HttpClient) { }
 
@@ -20,10 +21,18 @@ export class BookingsService {
     return this.ulist;
   }
 
+
+
   getbooking(id:number):Observable<Bookings>
   {
     
     return this.httpclient.get<Bookings>(this.url+"/"+id);
+  }
+
+  getuserbookings(id:number):Observable<Bookings>
+  {
+    
+    return this.httpclient.get<Bookings>(this.ur+"/"+id);
   }
   addbooking(u:Bookings):Observable<Bookings>
   {
@@ -38,18 +47,32 @@ export class BookingsService {
     });
   }
 
-    Editbooking(id:number,u:Bookings):Observable<Bookings>
-  {
-    return this.httpclient.put<Bookings>(this.url+"?id="+id,u,{
+  //   editbooking(id:number,u:Bookings):Observable<Bookings>
+  // {
+  //   return this.httpclient.put<Bookings>(this.url+"/"+id,u,{
+  //     headers:new HttpHeaders({
+  //       'Content-Type':'application/json;charset=UTF-8',
+  //       'Access-Control-Allow-Origin':'*',
+  //       'Access-Control-Allow-Method':'*'
+        
+  //     })
+  //   });
+  // }
+    
+  updateBooking(id: number, booking: Bookings): Observable<Bookings> {
+    const url = `${this.url}/${id}`;
+    return this.httpclient.put<Bookings>(url, booking, {
       headers:new HttpHeaders({
         'Content-Type':'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin':'*',
         'Access-Control-Allow-Method':'*'
         
       })
-    });
+    }).pipe(
+      tap(_ => console.log(`Updated booking with id=${id}`)),
+      
+    );
   }
-    
   Deletebooking(id:number):Observable<Bookings>
   {
     return this.httpclient.delete<Bookings>(this.url+"?id="+id,{

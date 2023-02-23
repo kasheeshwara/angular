@@ -10,7 +10,7 @@ export class ProductService {
  id:any;
   ulist:any;
   u:Product={id:0,name:"",make:"",model:"",cost:null, createdDate:new Date()};
-  url:string="https://localhost:44306/api/Products";
+  url:string="https://localhost:44347/api/Products";
   headers:any={ 'Content-Type':'application/json;charset=UTF-8',
   'Access-Control-Allow-Origin':'*',
   'Access-Control-Allow-Method':'*'
@@ -45,7 +45,7 @@ export class ProductService {
     
   Deleteproduct(id:number):Observable<Product>
   {
-    return this.httpclient.delete<Product>(this.url+"?id="+id,{
+    return this.httpclient.delete<Product>(this.url+"/"+id,{
       headers:new HttpHeaders(this.headers)
       
     });

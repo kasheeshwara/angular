@@ -10,7 +10,8 @@
         <div class="dashboard_buttons">
           <ul>
          
-          <li><a style="margin-right: 20px;"routerLink="/product">Back</a></li>
+          <li><!--<a style="margin-right: 20px;"routerLink="/product">Back</a>--></li>
+          <li><a style="margin-right: 20px;"routerLink="/admindashboard">Home</a></li>
         </ul>
         </div>
       </nav>
@@ -18,30 +19,31 @@
     
 
   
-    Enter Name:
-    <input type="text" name="name" [(ngModel)]="u.name" #name=ngModel minlength="5" required/>
-    <span class="invalid-feedback" *ngIf="name.touched && name.invalid">Product name should be minimum of 5 characters </span><br/><br/>
+    Enter Name:<span style="color: red;">*</span><br><br>
+    <input type="" name="name" [(ngModel)]="u.name" #name=ngModel minlength="5" required/>
+    <span class="invalid-feedback" *ngIf="name.touched && name.invalid" style="color: red;">*Required </span><br/><br/>
 
-    Enter Make:
-    <input type="password" name="password" [(ngModel)]="u.make" #make=ngModel required/>
-    <span class="invalid-feedback"  *ngIf="make.touched && make.invalid">Make is mandatory </span><br/><br/>
+    Enter Make:<span style="color: red;">*</span><br><br>
+    <input type="" name="password" [(ngModel)]="u.make" #make=ngModel required/>
+    <span class="invalid-feedback"  *ngIf="make.touched && make.invalid" style="color: red;">*Required</span><br/><br/>
 
-    Enter Model:
+    Enter Model:<span style="color: red;">*</span><br><br>
     <input type="email" name="email"  [(ngModel)]="u.model" #model=ngModel min="1" required/>
-    <span class="invalid-feedback" *ngIf="model.touched && model.invalid"> Enter correct Model </span><br/><br/>
+    <span class="invalid-feedback" *ngIf="model.touched && model.invalid" style="color: red;"> *Required </span><br/><br/>
 
-    Enter Cost:
+    Enter Cost:<span style="color: red;">*</span><br><br>
     <input type="number" name="mobile" [(ngModel)]="u.cost" #cost=ngModel required/>
-    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="cost.touched && cost.invalid"> Enter Cost correctly</span><br/><br/>
-    <br/><br/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="cost.touched && cost.invalid" style="color: red;">*Required</span><br/><br/>
+    
 
-    Enter Created Date:
-    <input type="date" name="registeredDate" [(ngModel)]="u.createdDate" #createdDate=ngModel required/>
-    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="createdDate.touched && createdDate.invalid">Select Created date</span><br/><br/>
+    Enter Created Date:<span style="color: red;">*</span><br><br>
+    <input type="datetime" name="registeredDate" [(ngModel)]="u.createdDate" #createdDate=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="createdDate.touched && createdDate.invalid"></span><br/><br/>
     <br/><br/>
 
     <button type="submit" value="save product"  class="primary">Add New Product</button>
     <button type="reset" > Clear </button>
+    <button style="margin-right: 20px;"routerLink="/product">Back</button>
     <br/><br/>
 </form>
 </div>

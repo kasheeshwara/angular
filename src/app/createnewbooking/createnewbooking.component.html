@@ -1,52 +1,78 @@
+<html>
 <div>
     <h1 ></h1>
     <div class="logo">
         <img src="../../assets/img/logo.png"  width="100px"/>
-        </div>
+        </div><br><br><br>
        
-          <h1 class="dashboard_name">Add Product</h1>
-          <hr />
+          <!-- <h1 class="dashboard_name">New Booking</h1> -->
+          
     <nav>
         <div class="dashboard_buttons">
           <ul>
          
-          <li><a style="margin-right: 20px;"routerLink="/dashboard">Back</a></li>
+          <li><!--<a style="margin-right: 20px;"routerLink="/service">Back</a>--></li>
+          <li><a style="margin-right: 20px;"routerLink="/dashboard">Home</a></li>
         </ul>
         </div>
       </nav>
-<form  #prform="ngForm" (ngSubmit)="savebooking()" >
+      <h1 class="dashboard_name" style="margin-left: 30px;">New Booking</h1><br>
+      <div style="margin-left: 30px;">
+<form  #prform="ngForm"  >
     
 
   
-    Product ID:
-    <input type="number" name="name" [(ngModel)]="u.productId" #productId=ngModel minlength="5" required/>
-    <span class="invalid-feedback" *ngIf="productId.touched && productId.invalid">Product ID required </span><br/><br/>
+  
+    Product ID:<span style="color: red
+    ;">*</span><br><br>
+    <input type="number" name="productId" [(ngModel)]="u.productId" #productId=ngModel  disabled/>
+    <span class="invalid-feedback" *ngIf="productId.touched && productId.invalid" style="color: red;" > *Required </span><br/><br/>
 
-    User ID:
-    <input type="number" name="password" [(ngModel)]="u.userId" #userId=ngModel required/>
-    <span class="invalid-feedback"  *ngIf="userId.touched && userId.invalid">User ID required </span><br/><br/>
+    User ID:<span style="color: red
+    ;">*</span><br><br>
+    <input type="number" name="userId" [(ngModel)]="u.userId" #userId=ngModel disabled/>
+    <span class="invalid-feedback"  *ngIf="userId.touched && userId.invalid" style="color: red;">*Required </span><br/><br/>
 
-    Request Date:
-    <input type="datetime" name="email"  [(ngModel)]="u.reqDate" #reqDate=ngModel min="1" required/>
-    <span class="invalid-feedback" *ngIf="reqDate.touched && reqDate.invalid"> Chosse Request Date </span><br/><br/>
+    Request Date:<span style="color: red
+    ;">*</span><br><br>
+    <input type="datetime" name="reqDate"  [(ngModel)]="u.reqDate" #reqDate=ngModel  required/>
+    <span class="invalid-feedback" *ngIf="reqDate.touched && reqDate.invalid" style="color: red;"> *Required </span><br/><br/>
 
-    Problem:
-    <input type="text" name="mobile" [(ngModel)]="u.problem" #problem=ngModel required/>
-    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="problem.touched && problem.invalid"> Enter Problem correctly</span><br/><br/>
-    <br/><br/>
+    Problem:<span style="color: red
+    ;">*</span><br><br>
+    <input type="text" name="problem" [(ngModel)]="u.problem" #problem=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="problem.touched && problem.invalid" style="color: red;"> *Required </span><br/><br/>
+    
 
-    Description:
-    <input type="text" name="registeredDate" [(ngModel)]="u.description" #description=ngModel required/>
-    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="description.touched && description.invalid">Write Description</span><br/><br/>
-    <br/><br/>
+    Description:<span style="color: red
+    ;">*</span><br><br>
+    <input type="text" name="description" [(ngModel)]="u.description" #description=ngModel required/>
+    <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="description.touched && description.invalid" style="color: red;">*Required</span><br/><br/>
+    
 
-    Status:
-    <input type="text" name="registeredDate" [(ngModel)]="u.status" #status=ngModel required/>
+    Status:<span style="color: red
+    ;">*</span><br><br>
+    <input type="" id="status" name="status" [(ngModel)]="u.status" #status=ngModel value="pending"  disabled>
+    <!-- <select  name="registeredDate" [(ngModel)]="u.status" #status=ngModel >
+      <option value="pending" selected>resolved</option>
+      <option value="resolved" >pending</option>
+    </select> -->
+      
+   <!-- <input type="text" name="registeredDate" [(ngModel)]="u.status" #status=ngModel required/>
     <span style="text-decoration-color: red;" class="invalid-feedback" *ngIf="status.touched && status.invalid">Write Status</span><br/><br/>
-    <br/><br/>
-
-    <button type="submit" value="save booking"  class="primary">Add New Product</button>
+    <br/><br/> -->
+    <br/><br/><br>
+    <button type="submit" style="margin-right: 20px;" value="save booking" (click)="savebooking()" class="primary">Add New Booking</button>
     <button type="reset" > Clear </button>
+    <button style="margin-left: 20px;"routerLink="/ulistproduct">Back</button>
     <br/><br/>
 </form>
 </div>
+</div>
+
+<!--<select>
+  <option value="option1">Option 1</option>
+  <option value="option2" selected>Option 2 (selected by default)</option>
+  <option value="option3">Option 3</option>
+</select>-->
+</html>
